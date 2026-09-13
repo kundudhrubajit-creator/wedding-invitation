@@ -228,12 +228,13 @@ section:not(.hero):not(.photo-hero) .wrap:after{content:"";position:absolute;lef
 .gated-countdown{filter:blur(6px);opacity:.22;transition:filter .9s,opacity .9s}.date-unlocked .gated-countdown{filter:none;opacity:1}
 .gated-date{filter:blur(6px);opacity:.25;transition:filter .9s,opacity .9s}.date-unlocked .gated-date{filter:none;opacity:1}
 .gate-shell{position:relative;width:100%;display:flex;justify-content:center;align-items:center}
-.gate-note{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);width:min(430px,82vw);padding:14px 22px;border:1px solid rgba(240,210,124,.8);border-radius:999px;background:rgba(78,9,16,.82);color:#fff7e8;text-align:center;font:600 17px "Tiro Bangla",serif;letter-spacing:.2px;box-shadow:0 10px 30px rgba(40,5,8,.22);backdrop-filter:blur(7px);transition:opacity .45s,transform .45s;pointer-events:none}
-.gate-note small{display:block;font:400 13px "Noto Serif Bengali",serif;margin-top:2px;opacity:.9}.scratch-jump{pointer-events:auto;text-decoration:none}.scratch-jump:hover{filter:brightness(1.08)}
-.date-unlocked .gate-note{opacity:0;transform:translate(-50%,-50%) scale(.94)}
+.gate-note{position:absolute;z-index:10;left:50%;top:66%;transform:translate(-50%,-50%);width:min(430px,82vw);padding:14px 22px;border:1px solid rgba(240,210,124,.8);border-radius:999px;background:rgba(78,9,16,.88);color:#fff7e8;text-align:center;font:600 17px "Tiro Bangla",serif;letter-spacing:.2px;box-shadow:0 10px 30px rgba(40,5,8,.28);backdrop-filter:blur(7px);transition:opacity .45s,transform .45s;pointer-events:auto;text-decoration:none}
+.gate-note small{display:block;font:400 13px "Noto Serif Bengali",serif;margin-top:2px;opacity:.9}
+.gate-note:hover{filter:brightness(1.08)}
+.date-unlocked .gate-note{opacity:0;transform:translate(-50%,-50%) scale(.94);pointer-events:none}
 .event-gated{position:relative;overflow:hidden}.event-scratch-link{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:82%;padding:10px 12px;border:1px solid rgba(214,166,56,.75);border-radius:999px;background:rgba(78,9,16,.88);color:#fff7e8;text-align:center;font:600 15px "Tiro Bangla",serif;box-shadow:0 8px 22px rgba(50,8,8,.18);transition:opacity .45s,transform .45s;text-decoration:none}.date-unlocked .event-scratch-link{opacity:0;transform:translate(-50%,-50%) scale(.94);pointer-events:none}
 .venue-date-gate{position:relative;display:inline-block;min-width:240px}.venue-scratch-link{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;padding:7px 12px;border:1px solid rgba(240,210,124,.7);border-radius:999px;background:rgba(78,9,16,.92);color:#fff7e8;text-align:center;font:600 14px "Tiro Bangla",serif;white-space:nowrap;transition:opacity .45s,transform .45s;text-decoration:none}.date-unlocked .venue-scratch-link{opacity:0;transform:translate(-50%,-50%) scale(.94);pointer-events:none}
-@media(max-width:700px){.gate-note{font-size:15px;padding:12px 17px}.event-scratch-link{font-size:13px;width:88%}.venue-date-gate{min-width:230px}.venue-date-gate:after{font-size:12px}}
+@media(max-width:700px){.gate-note{top:66%;font-size:15px;padding:12px 17px;width:min(390px,88vw)}.event-scratch-link{font-size:13px;width:88%}.venue-date-gate{min-width:230px}.venue-date-gate:after{font-size:12px}}
 
 @media(max-width:700px){.hero-diya-left,.hero-diya-right{transform:scale(.78);bottom:16px}.envelope-wrap{height:250px}.flap{height:140px}.letter{height:190px}.envelope-wrap.opened .letter{transform:translateY(-90px)}.letter-inner strong{font-size:28px}.scratch-wrap{height:300px}.date-card-main{font-size:35px}.photo-light{animation-duration:13s}.map-card{grid-template-columns:1fr}.map-visual{height:125px}.map-copy{text-align:center}.vbox{padding:42px 22px}.play-btn{width:72px;height:72px}.play-btn:before{border-left-width:21px;border-top-width:13px;border-bottom-width:13px}}
 
@@ -477,13 +478,17 @@ font-size:clamp(48px,5.5vw,68px);
       <div class="sheet flip-sheet"><div class="front"><span class="flip-num">00</span></div></div>
     </div>
     <span>সেকেন্ড</span>
-    <a class="gate-note scratch-jump" href="#date-reveal">
+  </div>
+</div>
+</div>
+
+<a class="gate-note scratch-jump" href="#date-reveal">
   উপরের scratch card-টি ঘষুন ✨
   <small>এখানে ক্লিক করলে scratch card-এ চলে যাবেন</small>
 </a>
-  </div>
-</div></section>
 
+</div>
+</section>
 <section class="events story-section" id="events">
 <div class="wrap"><div class="title reveal"><div class="orn">❈</div><h2>বিয়ের অনুষ্ঠান</h2><svg class="alpana-line" viewBox="0 0 280 55" aria-hidden="true"><path d="M5 28 C28 5,48 5,70 28 S112 51,140 28 S168 5,196 28 S238 51,275 28 M45 28 C55 16,65 16,75 28 M205 28 C215 16,225 16,235 28 M128 28 C132 17,136 17,140 28 C144 17,148 17,152 28"/></svg><p>আপনাদের উপস্থিতিই আমাদের আনন্দ পূর্ণ করবে</p></div>
 <div class="eg">
