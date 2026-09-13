@@ -531,8 +531,9 @@ function openInvitation(){
   if(opened)return;
   const keepY=window.scrollY||document.documentElement.scrollTop||0;
   opened=true;
-  envelope.classList.add('opened');
-  hero.classList.add('opened');
+opened=true;
+gtag('event', 'envelope_opened');
+envelope.classList.add('opened');
   document.body.classList.remove('locked');
   document.body.classList.add('unlocked');
   document.documentElement.classList.remove('locked-html');
@@ -676,8 +677,11 @@ if(canvas){
   function checkReveal(){
     const data=ctx.getImageData(0,0,canvas.width,canvas.height).data;const step=Math.max(10,Math.floor(canvas.width/80));let transparent=0,total=0;
     for(let y=0;y<canvas.height;y+=step){for(let x=0;x<canvas.width;x+=step){total++;if(data[(y*canvas.width+x)*4+3]<80)transparent++}}
-    if(transparent/total>.46&&!revealed){
-      revealed=true;scratchWrap.classList.add('revealed');document.body.classList.add('date-unlocked');canvas.style.pointerEvents='none';
+if(transparent/total>.46&&!revealed){
+  revealed=true;
+  gtag('event', 'date_revealed');
+  scratchWrap.classList.add('revealed');
+  document.body.classList.add('date-unlocked');canvas.style.pointerEvents='none';
 setTimeout(()=>canvas.style.opacity='0',650);
       document.getElementById('scratchWrap').scrollIntoView({behavior:'smooth',block:'center'});
     }
@@ -700,12 +704,30 @@ updateMusicButton();
 const videoStage=document.getElementById('videoStage');
 const weddingVideo=document.getElementById('weddingVideo');
 const videoThumb=document.getElementById('videoThumb');
-function playWeddingVideo(){videoStage.classList.add('playing');stopBgm();weddingVideo.play().catch(()=>{});}
+let videoTracked=false;
+
+function playWeddingVideo(){
+  videoStage.classList.add('playing');
+
+  if(!videoTracked){
+    gtag('event', 'video_played');
+    videoTracked=true;
+  }
+
+  stopBgm();
+  weddingVideo.play().catch(()=>{});
+}
 videoThumb.addEventListener('click',playWeddingVideo);videoThumb.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();playWeddingVideo()}});
 weddingVideo.addEventListener('play',()=>{videoStage.classList.add('playing');stopBgm()});
 weddingVideo.addEventListener('pause',()=>{if(!weddingVideo.ended){videoStage.classList.remove('playing');startBgm()}});
 weddingVideo.addEventListener('ended',()=>{videoStage.classList.remove('playing');startBgm()});
+const mapButton=document.querySelector('.map-card .btn');
 
+if(mapButton){
+  mapButton.addEventListener('click',()=>{
+    gtag('event', 'map_clicked');
+  });
+}
 document.querySelectorAll('.scratch-jump').forEach(link=>{
   link.addEventListener('click',e=>{
     e.preventDefault();
