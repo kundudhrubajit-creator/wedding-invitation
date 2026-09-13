@@ -182,8 +182,25 @@ section:not(.hero):not(.photo-hero) .wrap:after{content:"";position:absolute;lef
 .letter:before{content:"";position:absolute;inset:11px;border:1px solid rgba(139,21,29,.22);pointer-events:none}
 .letter:after{content:"✦  ❀  ✦";position:absolute;top:20px;left:0;right:0;text-align:center;color:var(--gold);font-size:17px;letter-spacing:8px;opacity:.8}
 .letter-inner{position:relative;z-index:2;padding:35px 18px 18px}.letter-inner small{letter-spacing:3px;color:var(--red)}.letter-inner strong{font-size:38px;margin:13px 0 10px}.letter-inner span{color:var(--gold);font-size:27px}
-.envelope-glow{position:absolute;inset:14% 15%;border-radius:40%;background:radial-gradient(circle,rgba(255,227,142,.95) 0,rgba(255,208,75,.35) 22%,rgba(255,190,55,.12) 44%,transparent 72%);filter:blur(14px);opacity:0;z-index:5;pointer-events:none;transition:opacity .8s;mix-blend-mode:screen}
-.envelope-wrap.opened .envelope-glow{opacity:1;animation:innerGlow 2.6s ease-in-out both}
+.envelope-glow{
+  position:absolute;
+  inset:12% 13%;
+  border-radius:40%;
+  background:radial-gradient(
+    circle,
+    rgba(255,239,170,1) 0%,
+    rgba(255,215,100,.62) 24%,
+    rgba(255,194,65,.28) 48%,
+    transparent 74%
+  );
+  filter:blur(13px);
+  opacity:.48;
+  z-index:5;
+  pointer-events:none;
+  transition:opacity .8s;
+  mix-blend-mode:screen;
+  animation:envGlow 2.8s ease-in-out infinite;
+}.envelope-wrap.opened .envelope-glow{opacity:1;animation:innerGlow 2.6s ease-in-out both}
 .envelope-wrap.opened .flap{transform:rotateX(-178deg);z-index:1}
 .envelope-wrap.opened .letter{transform:translateY(-112px) scale(1);opacity:1}
 .envelope-wrap.opened .seal{transform:translate(-50%,-50%) scale(.08) rotate(30deg);opacity:0;transition-duration:.95s}
