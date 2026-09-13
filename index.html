@@ -190,6 +190,24 @@ section:not(.hero):not(.photo-hero) .wrap:after{content:"";position:absolute;lef
 @keyframes innerGlow{0%{opacity:0;transform:scale(.65)}28%{opacity:1;transform:scale(1.15)}70%{opacity:.72;transform:scale(1)}100%{opacity:.15;transform:scale(1.2)}}
 .click-hint{transition:opacity .6s,transform .6s}.envelope-wrap.opened~.click-hint{opacity:0;transform:translateY(-8px);pointer-events:none}.scroll-hint{opacity:0;transform:translateY(-5px);color:var(--red);font-size:14px;margin-top:4px;transition:opacity .8s 2.5s,transform .8s 2.5s}.hero.opened .scroll-hint{opacity:1;transform:none;animation:floatHint 2.4s ease-in-out infinite 3.2s}
 .hero-reveal{margin-top:4px}.hero-date{display:none}
+.hero.opened .scroll-hint{
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:translateX(-50%) !important;
+  display:block !important;
+  position:absolute;
+  left:50%;
+  bottom:32px;
+  z-index:50;
+  color:var(--red);
+  font:600 15px "Tiro Bangla",serif;
+  padding:9px 20px;
+  border:1px solid rgba(139,21,29,.28);
+  border-radius:999px;
+  background:rgba(255,250,240,.88);
+  box-shadow:0 6px 18px rgba(90,20,15,.10);
+  white-space:nowrap;
+}
 /* Date reveal is the only place where the wedding date is exposed before the countdown/events */
 .date-reveal{background:radial-gradient(circle at 50% 10%,#fffefa 0,#fff6e8 40%,#ead5af 100%);min-height:95vh}
 .scratch-wrap{width:min(540px,92vw);height:360px;margin:auto;position:relative;border-radius:26px;filter:drop-shadow(0 22px 40px rgba(66,17,12,.16));overflow:hidden}
